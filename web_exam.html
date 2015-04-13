@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta charset="utf-8">
+  <style type="text/css">
+ .but{text-align:center;}
+ input{padding:0 15px;}
+ .tr_radio{height:100px;font-size:18px;}
+ .td_tg{color:#000099;font-style:bold;}
+  </style>
+  <script type="text/javascript">
+	  function checkResult()
+	  {
+		
+		var obj;
+		var sum=0;
+		var sel_radio=new Array(2);
+		var right_answer=new Array("A","C","C","C","A");
+		for(var j=1;j<=5;j++)
+		{
+		
+			switch(j)
+			{
+				case 1:
+					obj=document.getElementsByName('r1');
+					break;s
+				case 2:
+					obj=document.getElementsByName('r2');
+					break;
+				case 3:
+					obj=document.getElementsByName('r3');
+					break;
+				case 4:
+					obj=document.getElementsByName('r4');
+					break;
+				default:
+					obj=document.getElementsByName('r5');
+					break;
+			}
+			
+			for(var i=0;i<obj.length;i++)
+			{
+				if(obj[i].checked)
+					{
+						sel_radio[j-1]=obj[i].value;
+					}
+			}
+		}
+		for(var i=0;i<=4;i++)
+		{
+			if(sel_radio[i]==right_answer[i])
+			{
+				sum=sum+20;
+			}
+		}
+		alert("您选择的答案是:\n"+sel_radio.join("-")+"\n"+"您的最终得分是:"+sum);
+	  }
+  </script>
+ </head>
+
+ <body>
+  <div style="font-size:20px;font-family:黑体;text-align:center;">Web前端开发技术标准测验样例[单选题]</div>
+  <br/>
+  <hr style="width:100%;height:30px;background:#CC9966;">
+  <form action="" method="post">
+  
+  <table class="tr_radio">
+  <tr>
+	<td class="td_tg">1.HTML指的是(       ).</td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio"  name="r1" id="r1" value="A">A.超文本标记语言(Hyper Text Markup Language)</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r1" id="r1" value="B">B.家庭工具标记语言(Home Tool Markup Language)</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r1"  id="r1" value="C">C.超链接和文本标记语言(Hyperlinks and Text Markup Language)</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r1" id="r1" value="D">D.以上都不是</label></td>
+  </tr>
+    <tr>
+	<td class="td_tg">2.CSS的扩展名为(       ).</td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r2" id="r2" value="A">A. .txt</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r2"  id="r2" value="B">B. .htm</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r2"  id="r2" value="C">C. .css</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r2"  id="r2" value="D">D. .html</label></td>
+  </tr>
+    <tr>
+	<td class="td_tg">3.在网页中常用的单位是(       ).</td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r3" id="r3" value="A">A. in</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r3" id="r3" value="B">B. cm</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r3" id="r3" value="C">C. px</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r3" id="r3" value="D">D. pc</label></td>
+  </tr>
+   <tr>
+	<td class="td_tg">4.设置text-decoration属性的删除线的值为(       ).</td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r4" id="r4" value="A">A. underline</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r4" id="r4" value="B">B. overline</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r4" id="r4" value="C">C. line-through</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r4" id="r4" value="D">D. blink</label></td>
+  </tr>
+   <tr>
+	<td class="td_tg">5.设置字符间距为15px的语句为(       ).</td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r5" id="r5" value="A">A. letter-spacing:15px</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r5" id="r5" value="B">B. line-height:15px</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r5" id="r5" value="C">C. letter-height:15px</label></td>
+  </tr>
+   <tr>
+	<td ><label><input type="radio" name="r5" id="r5" value="D">D.line-spacing:15px</label></td>
+  </tr>
+  </table>
+  
+  <div class="but">
+  <input type="button" value="提交"  onclick="checkResult()" style="width:120px;height:34px;font-size:24px;">
+  <input type="reset" value="重置" style="width:120px;height:34px;font-size:24px;">
+  </div>
+  </form>
+ </body>
+</html>
